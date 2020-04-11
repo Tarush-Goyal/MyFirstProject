@@ -1,0 +1,10 @@
+// @import "~@angular/material/theming";
+@import '../../styles.scss';
+
+.material-icons-sharp.md-48 { font-size: 48px;}
+
+::ng-deep .mat-badge-content {
+  // background-color: mat-color(mat-palette($primary-color)) !important;
+  z-index: 2;
+  right: -36px !important;
+}
