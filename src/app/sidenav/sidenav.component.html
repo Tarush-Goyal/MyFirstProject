@@ -1,7 +1,7 @@
 
 <mat-sidenav-container>
   <mat-sidenav  [opened]="isOpen" (openedChange)="test($event)">
-    <mat-nav-list>
+    <mat-nav-list *ngIf="isOpen">
       <!-- <app-furniture-menu></app-furniture-menu> -->
 <app-books-menu></app-books-menu>
 

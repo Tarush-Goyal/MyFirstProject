@@ -1,13 +1,12 @@
-<a mat-list-item [matMenuTriggerFor]="books" mat-menu-trigger (mouseenter)="enter()" (mouseexit)="exit()">Books</a>
-<mat-menu #books="matMenu">
-  <!-- <button mat-menu-item [matMenuTriggerFor]="thriller">Thriller</button>
-  <button mat-menu-item [matMenuTriggerFor]="mystery">Mystery</button>
-  <button mat-menu-item [matMenuTriggerFor]="fiction">Fiction</button>
-  <button mat-menu-item [matMenuTriggerFor]="non_fiction">Non-Fiction</button> -->
-  <button mat-menu-item>Thriller</button>
-  <button mat-menu-item>Mystery</button>
-  <button mat-menu-item>Fiction</button>
-  <button mat-menu-item>Non-Fiction</button>
+<a mat-list-item [matMenuTriggerFor]="books" mat-menu-trigger (mouseenter)="Book()" (mouseleave)="exitBook()">Books</a>
+<mat-menu #books="matMenu" [hasBackdrop]="false" class="size">
+  <div (mouseenter)="enterMenu=true" (mouseleave)="exitMenu()">
+    <button mat-menu-item style="height:0;">Empty dummy button</button>
+    <button mat-menu-item>Thriller</button>
+    <button mat-menu-item>Mystery</button>
+    <button mat-menu-item>Fiction</button>
+    <button mat-menu-item>Non-Fiction</button>
+  </div>
 </mat-menu>
 
 
