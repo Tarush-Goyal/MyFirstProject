@@ -1,0 +1,40 @@
+<a mat-list-item [matMenuTriggerFor]="furniture">Furniture</a>
+<mat-menu #furniture="matMenu" class="furniture">
+  <button mat-menu-item [matMenuTriggerFor]="thriller">Thriller</button>
+  <button mat-menu-item [matMenuTriggerFor]="mystery">Mystery</button>
+  <button mat-menu-item [matMenuTriggerFor]="fiction">Fiction</button>
+  <button mat-menu-item [matMenuTriggerFor]="non_fiction">Non-Fiction</button>
+</mat-menu>
+
+<mat-menu #thriller="matMenu">
+  <button mat-menu-item>Fishes</button>
+  <button mat-menu-item>Amphibians</button>
+  <button mat-menu-item>Reptiles</button>
+  <button mat-menu-item>Birds</button>
+  <button mat-menu-item>Mammals</button>
+</mat-menu>
+
+<mat-menu #mystery="matMenu">
+  <button mat-menu-item>Insects</button>
+  <button mat-menu-item>Molluscs</button>
+  <button mat-menu-item>Crustaceans</button>
+  <button mat-menu-item>Corals</button>
+  <button mat-menu-item>Arachnids</button>
+  <button mat-menu-item>Velvet worms</button>
+  <button mat-menu-item>Horseshoe crabs</button>
+</mat-menu>
+
+<mat-menu #fiction="matMenu">
+  <button mat-menu-item>Baikal oilfish</button>
+  <button mat-menu-item>Bala shark</button>
+  <button mat-menu-item>Ballan wrasse</button>
+  <button mat-menu-item>Bamboo shark</button>
+  <button mat-menu-item>Banded killifish</button>
+</mat-menu>
+
+<mat-menu #non_fiction="matMenu">
+  <button mat-menu-item>Sonoran desert toad</button>
+  <button mat-menu-item>Western toad</button>
+  <button mat-menu-item>Arroyo toad</button>
+  <button mat-menu-item>Yosemite toad</button>
+</mat-menu>

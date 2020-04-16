@@ -1,11 +1,9 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center" style="overflow-x:hidden;">
     <div>
-    <button mat-icon-button (click)="temp=!temp">
+    <button mat-icon-button (click)="toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-
-
 
     <a mat-button [routerLink]="['/home']">
       <mat-card-title >Home</mat-card-title>
@@ -27,8 +25,6 @@
     <a mat-button [routerLink]="['/user']">Welcome {{user}}</a>
   </mat-toolbar-row>
 </mat-toolbar>
-
-<app-sidenav [isOpen]="temp"></app-sidenav>
 
 <!-- <div>
 

@@ -1,21 +1,21 @@
 
-<mat-sidenav-container style="height:calc(100% - 128px)">
-  <mat-sidenav  [opened]="isOpen">
+<mat-sidenav-container>
+  <mat-sidenav  [opened]="isOpen" (openedChange)="test($event)">
     <mat-nav-list>
+      <!-- <app-furniture-menu></app-furniture-menu> -->
+<app-books-menu></app-books-menu>
 
-      <a mat-list-item [routerLink]="'/accounts'"> Accounts </a>
-      <a mat-list-item [routerLink]="'/create-account'"> Create Account </a>
-      <a mat-list-item [routerLink]="'/contacts'"> Contacts </a>
-      <a mat-list-item [routerLink]="'/create-contact'"> Create Contact </a>
-      <a mat-list-item [routerLink]="'/activities'"> Activities </a>
-      <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>
+      <!-- <a mat-list-item> Groceries </a> -->
+      <!-- <a mat-list-item [routerLink]="'/create-contact'"> Furniture </a>
+      <a mat-list-item [routerLink]="'/activities'"> Kitchen </a>
+      <a mat-list-item [routerLink]="'/create-activity'"> Outdoor </a> -->
 
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
-    
-    <!-- <div style="height: 88vh;"> -->
+  <mat-sidenav-content fxLayout="column">
+    <app-header></app-header>
+    <div class="router-container">
       <router-outlet></router-outlet>
-    <!-- </div> -->
+      </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
