@@ -17,8 +17,14 @@ export class ProductPageComponent implements OnInit {
 
   images: GalleryItem[];
   // data=this.productData.productImages[0].note9;
-  imgData=this.productData.Product[0].note9[0].images;
-  title=this.productData.Product[0].note9[0].title;
+  // imgData=this.productData.Product[0].note9[0].images;
+  // title=this.productData.Product[0].note9[0].title;
+  // Content=this.productData.Product[0].note9[0].details;
+  
+  title=this.productData.Product2[0].title;
+  imgData=this.productData.Product2[0].images;
+  Content=this.productData.Product2[0].details;
+
 
   items: GalleryItem[] = this.imgData.map(item =>
     new ImageItem({ src: item.srcUrl, thumb: item.previewUrl })
@@ -36,7 +42,6 @@ export class ProductPageComponent implements OnInit {
 
 
 Images=['./assets/images/note9.jpg','./assets/images/note9_back.jpg','./assets/images/SPen.jpg']
-Content=this.productData.Product[0].note9[0].details;
 
 add(){
   this.updateCart.changeCart.next(++this.value);
