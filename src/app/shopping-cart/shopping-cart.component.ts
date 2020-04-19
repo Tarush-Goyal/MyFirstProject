@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UpdateCart } from '../update-cart';
 
 @Component({
   selector: 'shopping-cart',
@@ -6,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-cart.component.scss']
 })
 export class ShoppingCartComponent implements OnInit {
+count:number=0;
+constructor(private updateCart:UpdateCart){}
 
-  counter=1;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.updateCart.changeCart.subscribe(value => {
+      this.count=value;
+    });
   }
 
 }

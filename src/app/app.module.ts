@@ -19,6 +19,11 @@ import { UserComponent } from './user/user.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MaterialModule } from './material.module';
+import { ProductPageComponent } from './product-page/product-page.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { GalleryModule } from '@ngx-gallery/core';
+import { LightboxModule } from  '@ngx-gallery/lightbox';
+import { GallerizeModule } from  '@ngx-gallery/gallerize';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,9 @@ import { MaterialModule } from './material.module';
     HomeComponent,
     RegisterComponent,
     SidenavComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ProductPageComponent,
+    NavMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +51,9 @@ import { MaterialModule } from './material.module';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
+    GalleryModule,
+    LightboxModule,
+    GallerizeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
