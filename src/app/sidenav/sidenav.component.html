@@ -1,21 +1,21 @@
-
 <mat-sidenav-container>
-  <mat-sidenav  [opened]="isOpen" (openedChange)="test($event)">
-    <mat-nav-list *ngIf="isOpen">
-      <!-- <app-furniture-menu></app-furniture-menu> -->
-<app-books-menu></app-books-menu>
+  <mat-sidenav [opened]="isOpen" (openedChange)="test($event)">
 
-      <!-- <a mat-list-item> Groceries </a> -->
-      <!-- <a mat-list-item [routerLink]="'/create-contact'"> Furniture </a>
-      <a mat-list-item [routerLink]="'/activities'"> Kitchen </a>
-      <a mat-list-item [routerLink]="'/create-activity'"> Outdoor </a> -->
 
-    </mat-nav-list>
+      <mat-action-list *ngIf="isOpen">
+        <a  [routerLink]="['/register']" style="height:0px"></a>
+
+<app-nav-menu></app-nav-menu>
+
+      </mat-action-list>
+
   </mat-sidenav>
   <mat-sidenav-content fxLayout="column">
+
     <app-header></app-header>
     <div class="router-container">
       <router-outlet></router-outlet>
-      </div>
+    </div>
+
   </mat-sidenav-content>
 </mat-sidenav-container>

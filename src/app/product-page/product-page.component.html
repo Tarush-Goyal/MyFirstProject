@@ -1,0 +1,53 @@
+<div>
+  <mat-card fxLayout="column" fxLayoutGap="100px">
+
+    <mat-card-title fxLayout="row" class="title" fxLayoutAlign="center center">{{title}}</mat-card-title>
+    <mat-card-content fxLayout="row" fxLayoutGap="100px">
+
+      <div fxLayout="column">
+
+        <div [ngSwitch]=index>
+          <button mat-icon-button>
+            <img *ngSwitchCase="0" [src]=Images[index] class="size" [lightbox]=0 thumbPosition="left">
+            <img *ngSwitchCase="1" [src]=Images[index] class="size" [lightbox]=1 thumbPosition="left">
+            <img *ngSwitchCase="2" [src]=Images[index] class="size" [lightbox]=2 thumbPosition="left">
+          </button>
+          </div>
+
+        <div fxFlex="90px"></div>
+
+        <div fxLayout="row" fxLayoutGap="20px">
+          <button mat-icon-button *ngFor="let image of Images;let i=index" (click)="buttonClicked(i)">
+            <img [src]=image class="small_size" [ngClass]="{ImgBorder:index===i}">
+          </button>
+        </div>
+
+      </div>
+
+
+      <div fxFlexOffset="300px">
+
+        <div>
+          <div fxLayout="column" fxFlex fxLayoutAlign="center center" fxLayoutGap="50px">
+            <button mat-raised-button (click)="add()">Add to Cart</button>
+            <div fxLayout="row" fxLayoutGap="15px">
+              <mat-icon class="material-icons-sharp">local_shipping</mat-icon>
+              <p>Delivery in 2-3 Days</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div>
+        <mat-list *ngFor="let content of Content">
+          <mat-list-item>{{content}}</mat-list-item>
+        </mat-list>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions></mat-card-actions>
+
+  </mat-card>
+</div>

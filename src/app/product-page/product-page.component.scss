@@ -1,0 +1,54 @@
+.size{
+  height:200px;
+  width:100px;
+}
+
+.small_size{
+  height: 100px;
+  width: 50px;
+}
+
+.title{
+  margin-top:25px !important;
+}
+
+.ImgBorder{
+  border:1px solid blue;
+}
+
+.container {
+    display: flex;
+    height: 200px;
+}
+
+.sizing{
+    width: 200px !important;
+    height:100px !important;
+  object-fit: cover;
+  margin: 5px;
+  }
+
+::ng-deep gallery{
+  background-color:white !important;
+}
+
+// ::ng-deep g-image-item{
+//   height:10px !important;
+// }
+
+::ng-deep gallery-thumbs{
+  height:200px !important;
+
+
+}
+// img[src]{
+//   height: 100px;
+//   width: 50px;
+// }
+// img {
+//   display: block;
+//   max-width:230px;
+//   max-height:95px;
+//   width: auto;
+//   height: auto;
+// }

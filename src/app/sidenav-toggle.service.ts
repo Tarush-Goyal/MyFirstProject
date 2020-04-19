@@ -1,8 +1,10 @@
 import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
 
+@Injectable({providedIn:'root'})
 
 export class SidenavToggle{
-  private temp: boolean=false;
+   private temp: boolean=false;
   sidebarVisibilityChange: Subject<boolean> = new Subject<boolean>();
 
   toggleSidebarVisibility() {

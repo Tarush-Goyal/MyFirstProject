@@ -19,13 +19,11 @@ import { UserComponent } from './user/user.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MaterialModule } from './material.module';
-import { MenuComponent } from './menu/menu.component';
-import { BooksMenuComponent } from './menu/books-menu/books-menu.component';
-import { FashionMenuComponent } from './menu/fashion-menu/fashion-menu.component';
-import { FurnitureMenuComponent } from './menu/furniture-menu/furniture-menu.component';
-import { OutdoorMenuComponent } from './menu/outdoor-menu/outdoor-menu.component';
-import { GroceriesMenuComponent } from './menu/groceries-menu/groceries-menu.component';
-import { KitchenMenuComponent } from './menu/kitchen-menu/kitchen-menu.component';
+import { ProductPageComponent } from './product-page/product-page.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { GalleryModule } from '@ngx-gallery/core';
+import { LightboxModule } from  '@ngx-gallery/lightbox';
+import { GallerizeModule } from  '@ngx-gallery/gallerize';
 
 @NgModule({
   declarations: [
@@ -40,13 +38,8 @@ import { KitchenMenuComponent } from './menu/kitchen-menu/kitchen-menu.component
     RegisterComponent,
     SidenavComponent,
     ShoppingCartComponent,
-    MenuComponent,
-    BooksMenuComponent,
-    FashionMenuComponent,
-    FurnitureMenuComponent,
-    OutdoorMenuComponent,
-    GroceriesMenuComponent,
-    KitchenMenuComponent
+    ProductPageComponent,
+    NavMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +51,9 @@ import { KitchenMenuComponent } from './menu/kitchen-menu/kitchen-menu.component
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
+    GalleryModule,
+    LightboxModule,
+    GallerizeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

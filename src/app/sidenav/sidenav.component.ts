@@ -8,6 +8,7 @@ import { SidenavToggle } from '../sidenav-toggle.service';
 })
 export class SidenavComponent implements OnInit {
 
+// links=[this.fashion,this.grocery];
   isOpen:boolean=false;
 
   constructor(private sidenavToggle:SidenavToggle){

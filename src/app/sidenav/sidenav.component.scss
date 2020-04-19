@@ -1,5 +1,15 @@
-mat-sidenav-container,mat-sidenav{
+mat-sidenav-container{
   height:100%;
+}
+
+mat-sidenav {
+  width: 200px;
+  height:100%;
+}
+
+.center{
+  display: inline-block;
+  padding-left:20px;
 }
 
 // ::ng-deep .cdk-overlay-connected-position-bounding-box{

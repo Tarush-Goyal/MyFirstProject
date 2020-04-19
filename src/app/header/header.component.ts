@@ -14,7 +14,6 @@ import {SidenavToggle} from '../sidenav-toggle.service'
 })
 export class HeaderComponent implements OnInit {
 
-counter=10;
 user='Guest';
 
 constructor(private sidenavToggle:SidenavToggle){
@@ -26,6 +25,7 @@ constructor(private sidenavToggle:SidenavToggle){
   //         domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/shopping_cart-24px.svg"));
   //        }
 toggle(){
+  // console.log(this.sidenavToggle.temp);
   this.sidenavToggle.toggleSidebarVisibility();
 }
 
