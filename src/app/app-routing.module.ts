@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { CarouselComponent } from './carousel/carousel.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
+import { TestComponent } from './test/test.component'
 import { CartComponent } from './cart/cart.component';
 import {ProductPageComponent } from './product-page/product-page.component'
+import { AllProductsComponent } from './all-products/all-products.component';
 
 
 const routes: Routes = [
@@ -14,8 +15,9 @@ const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path: 'register',component:RegisterComponent},
   {path: 'cart',component:CartComponent},
-  {path: 'user',component:UserComponent},
-  {path: 'product-page',component:ProductPageComponent},
+  {path: 'test',component:TestComponent},
+  {path: 'product-page/:id',component:ProductPageComponent},
+  {path: 'all-products',component:AllProductsComponent},
 ];
 
 @NgModule({

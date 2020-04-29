@@ -15,7 +15,6 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserComponent } from './user/user.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MaterialModule } from './material.module';
@@ -24,6 +23,12 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { GalleryModule } from '@ngx-gallery/core';
 import { LightboxModule } from  '@ngx-gallery/lightbox';
 import { GallerizeModule } from  '@ngx-gallery/gallerize';
+import { TestComponent } from './test/test.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { AllProductsComponent } from './all-products/all-products.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -40,8 +45,13 @@ import { GallerizeModule } from  '@ngx-gallery/gallerize';
     ShoppingCartComponent,
     ProductPageComponent,
     NavMenuComponent,
+    TestComponent,
+    AllProductsComponent,
+
+
   ],
   imports: [
+
     BrowserModule,
     MaterialModule,
     AppRoutingModule,
@@ -54,6 +64,9 @@ import { GallerizeModule } from  '@ngx-gallery/gallerize';
     GalleryModule,
     LightboxModule,
     GallerizeModule,
+    LazyLoadImageModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

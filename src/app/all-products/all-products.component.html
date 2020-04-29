@@ -1,0 +1,142 @@
+<div fxLayout="column">
+  <mat-card-title  fxFlexOffset="100px" class="header"  ><u>All Products</u></mat-card-title>
+
+</div>
+<!-- <mat-card-title  style="font-size:40px;margin-bottom:100px;" ><u>All Products</u></mat-card-title> -->
+<!-- <h1 fxFlexFill style="font-size:100px;margin-top:100px">hiii</h1> -->
+<div fxLayout="row" fxFlexFill>
+
+<div fxLayout="column" fxLayoutAlign="start center" fxFlex="300px">
+
+  <p>Filters</p>
+  <p>Categories</p>
+  <mat-checkbox #id=matCheckbox *ngFor="let cat of categories; let i=index" (click)="categoryClicked(id,i)">{{cat.category}}</mat-checkbox>
+  <p>Price Range</p>
+<mat-slider #slider=matSlider (click)=slided(slider) min="0" step="1000" max="100000" thumbLabel ></mat-slider>
+</div>
+
+  <mat-divider vertical=true></mat-divider>
+
+
+  <div fxFlexOffset="50px">
+    <div fxLayout="column" class="Margin">
+
+    <div  *ngIf="temp" >
+      <div fxLayout="column" >
+
+<!-- <div fxFlexFill> -->
+
+<!-- </div> -->
+        <div  fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center end">
+          <div *ngFor="let new of newProducts | slice:0:3; let i=index" fxLayout="column" >
+          <img (click)="navigateToProduct2(new.id)" [defaultImage]="new.images[0].srcUrl" [errorImage]="new.images[0].srcUrl" [lazyLoad]="new.images[0].srcUrl" />
+
+          <div fxLayout="column" fxLayoutAlign="center center">
+
+            <a mat-icon-button (click)="navigateToProduct2(new.id)" style="width:100%">
+              {{new.title}}
+            </a>
+            <a mat-icon-button (click)="navigateToProduct2(new.id)" style="width:100%">
+              Price:₹{{newPrice[i]}}
+            </a>
+            <div fxFlex="20px"></div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center end">
+        <div *ngFor="let new of newProducts | slice:3:6; let i=index" fxLayout="column">
+        <img (click)="navigateToProduct2(new.id)" [defaultImage]="new.images[0].srcUrl" [errorImage]="new.images[0].srcUrl" [lazyLoad]="new.images[0].srcUrl" />
+
+        <div fxLayout="column" fxLayoutAlign="center center">
+
+          <a mat-icon-button (click)="navigateToProduct2(new.id)" style="width:100%">
+            {{new.title}}
+          </a>
+          <a mat-icon-button (click)="navigateToProduct2(new.id)" style="width:100%">
+            Price:₹{{newPrice[i]}}
+          </a>
+          <div fxFlex="20px"></div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+      </div>
+    </div>
+    <div *ngIf="!temp">
+
+    <!-- </div> -->
+    <!-- <ng-template #show> -->
+      <div fxLayout="column">
+
+
+      <!-- <mat-card-title fxFlex="100px" style="font-size:40px" fxLayoutAlign="center center"><u>All Products</u></mat-card-title> -->
+
+    <div fxLayout="row" fxLayoutAlign="center end" fxLayoutGap="30px" *ngFor="let img of product | slice:0:2; let i=index">
+      <div fxLayout="column" fxLayoutGap="20px">
+        <img (click)="navigateToProduct(3*i)" [defaultImage]="product[3*i].images[0].srcUrl" [errorImage]="product[3*i].images[0].srcUrl" [lazyLoad]="product[3*i].images[0].srcUrl" />
+
+        <div fxLayout="column" fxLayoutAlign="center center">
+
+          <a mat-icon-button (click)="navigateToProduct(3*i)" style="width:100%">
+            {{product[3*i].title}}
+          </a>
+          <a mat-icon-button (click)="navigateToProduct(3*i)" style="width:100%">
+            Price:₹{{discountedPrice[3*i]}}
+          </a>
+          <div fxFlex="20px"></div>
+
+        </div>
+
+
+      </div>
+
+
+    <div fxLayout="column" fxLayoutGap="20px" >
+      <img (click)="navigateToProduct(3*i+1)" [defaultImage]="product[3*i+1].images[0].srcUrl" [errorImage]="product[3*i+1].images[0].srcUrl" [lazyLoad]="product[3*i+1].images[0].srcUrl" />
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+
+        <a mat-icon-button (click)="navigateToProduct(3*i+1)" style="width:100%">
+          {{product[3*i+1].title}}
+        </a>
+        <a mat-icon-button (click)="navigateToProduct(3*i)" style="width:100%">
+          Price:₹{{discountedPrice[3*i+1]}}
+        </a>
+        <div fxFlex="20px"></div>
+
+      </div>
+
+    </div>
+
+  <div fxLayout="column" fxLayoutGap="20px">
+    <img (click)="navigateToProduct(3*i+2)" [defaultImage]="product[3*i+2].images[0].srcUrl" [errorImage]="product[3*i+2].images[0].srcUrl" [lazyLoad]="product[3*i+2].images[0].srcUrl" />
+    <div fxLayout="column" fxLayoutAlign="center center">
+
+
+      <a mat-icon-button (click)="navigateToProduct(3*i+2)" style="width:100%">
+        {{product[3*i+2].title}}
+      </a>
+      <a mat-icon-button (click)="navigateToProduct(3*i+2)" style="width:100%">
+        Price:₹{{discountedPrice[3*i+2]}}
+      </a >
+      <div fxFlex="20px"></div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+<!-- </ng-template> -->
+<!-- <div class="">
+   -->
+</div>
+</div>
+</div>
+</div>
