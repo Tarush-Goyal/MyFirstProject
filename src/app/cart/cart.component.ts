@@ -18,12 +18,11 @@ export interface NewModel{
 
 export class CartComponent implements OnInit {
 
-
-productNo=1;
-productQuantity=1;
   Element_data:NewModel[]=[]
   productAdded;
-  displayedColumns2=['no','image','title','quantity','price']
+  newProduct;
+  quantity;
+    displayedColumns2=['no','image','title','quantity','price']
 
   constructor(private updateCart: UpdateCart) { }
 
@@ -31,14 +30,17 @@ productQuantity=1;
     if(this.updateCart.value>0){
       this.productAdded=true;
     }
+    let temp=this.updateCart.getProduct();
+    this.newProduct=temp[0];
+    this.quantity=temp[1];
 
-    for(let i in this.updateCart.cartProduct){
-      this.updateCart.cartProduct[i].price=this.updateCart.cartProduct[i].price-
-      ~~((this.updateCart.cartProduct[i].price * this.updateCart.cartProduct[i].discount) / 100)
+    for(let i in this.newProduct){
+      this.newProduct[i].price=(this.newProduct[i].price-
+      ~~((this.newProduct[i].price * this.newProduct[i].discount) / 100))*this.quantity[i]
       let option:NewModel={
-        product:this.updateCart.cartProduct[i],
-        quantity:this.productQuantity,
-        no:this.productNo,
+        product:this.newProduct[i],
+        quantity:this.quantity[i],
+        no:+i+1,
       };
       this.Element_data[i]=option;
 
