@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-// temp=new Set<String>();
 temp=[1,2,2,1,3,3,3]
 counter=[1,1,1,1,1,1,1]
 removedArrayIndex=[]

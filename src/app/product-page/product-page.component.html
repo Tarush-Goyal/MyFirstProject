@@ -1,24 +1,35 @@
-<div>
-  <mat-card fxLayout="column" fxLayoutGap="100px">
+  <!-- <mat-card fxLayout="column" > -->
+  <div class="mdc-layout-grid">
+  <div fxLayout="column" fxLayoutGap="150px">
 
-    <mat-card-title fxLayout="row" class="title" fxLayoutAlign="center center"><u>{{product.title}}</u></mat-card-title>
-    <mat-card-content fxLayout="row" fxLayoutGap="100px">
 
-      <div fxLayout="column">
+<!-- <mat-card-header> -->
+    <!-- <mat-card-title fxFlexFill class="title" fxLayoutAlign="center center"><u>{{product.title}}</u></mat-card-title> -->
+    <div class="title" fxLayoutAlign="center center"><u>{{product.title}}</u>
+    </div>
+  <!-- </mat-card-header> -->
+<!-- <div fxFlexOffset="100px"> -->
 
-        <div [ngSwitch]=index>
+
+    <!-- <mat-card-content fxLayout="row" fxLayoutGap="100px"> -->
+<div fxLayout="row" fxLayoutGap="80px" >
+
+
+      <div fxLayout="column" fxLayoutGap="0px">
+
+        <div [ngSwitch]=index fxFlexAlign="center">
           <button mat-icon-button>
-            <img *ngSwitchCase="0" [src]=product.images[index].srcUrl class="size" [lightbox]=0 thumbPosition="left">
-            <img *ngSwitchCase="1" [src]=product.images[index].srcUrl class="size" [lightbox]=1 thumbPosition="left">
-            <img *ngSwitchCase="2" [src]=product.images[index].srcUrl class="size" [lightbox]=2 thumbPosition="left">
+            <img *ngSwitchCase="0"  [src]=product.images[index].srcUrl class="size" [lightbox]=0 thumbPosition="left">
+            <img *ngSwitchCase="1"  [src]=product.images[index].srcUrl class="size" [lightbox]=1 thumbPosition="left">
+            <img *ngSwitchCase="2"  [src]=product.images[index].srcUrl class="size" [lightbox]=2 thumbPosition="left">
           </button>
         </div>
 
-        <div fxFlex="100px"></div>
+        <!-- <div fxFlex="100px"></div> -->
 
-        <div fxLayout="row" fxLayoutGap="20px">
+        <div fxLayout="row" fxLayoutGap="75px" style="position:relative;top:100px">
           <button mat-icon-button *ngFor="let image of product.images;let i=index" (click)="buttonClicked(i)">
-            <img [src]=image.srcUrl class="small_size" [ngClass]="{ImgBorder:index===i}">
+            <img  [src]=image.srcUrl class="small_size" [ngClass]="{ImgBorder:index===i}">
           </button>
         </div>
 
@@ -61,9 +72,11 @@
           <mat-list-item>{{content}}</mat-list-item>
         </mat-list>
       </div>
+</div>
+    <!-- </mat-card-content> -->
+    <!-- </div> -->
+    <!-- <mat-card-actions></mat-card-actions> -->
 
-    </mat-card-content>
-    <mat-card-actions></mat-card-actions>
-
-  </mat-card>
+  <!-- </mat-card> -->
+  </div>
 </div>

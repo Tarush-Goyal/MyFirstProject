@@ -2,17 +2,20 @@
   <mat-sidenav [opened]="isOpen" (openedChange)="test($event)">
 
 
-      <mat-action-list *ngIf="isOpen">
-        <a  [routerLink]="['/register']" style="height:0px"></a>
+    <mat-action-list *ngIf="isOpen">
 
-<app-nav-menu></app-nav-menu>
+      <a [routerLink]="['/test']" style="height:0px"></a>
+      <app-nav-menu></app-nav-menu>
 
-      </mat-action-list>
+    </mat-action-list>
 
   </mat-sidenav>
-  <mat-sidenav-content fxLayout="column">
 
-    <app-header></app-header>
+<!-- <mat-sidenav-content><app-header></app-header></mat-sidenav-content> -->
+
+  <mat-sidenav-content fxLayout="column" >
+
+    <app-header ></app-header>
     <div class="router-container">
       <router-outlet></router-outlet>
     </div>
