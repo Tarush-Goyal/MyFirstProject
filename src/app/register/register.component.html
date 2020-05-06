@@ -1,4 +1,12 @@
-<div fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
+<div fxLayout="column">
+<mat-toolbar *ngIf="errorMsg" fxLayoutAlign="center center" color="warn">
+  {{errorMsg}}
+</mat-toolbar>
+<mat-toolbar *ngIf="successMsg" fxLayoutAlign="center center" color="accent">
+  {{successMsg}}
+</mat-toolbar>
+
+<div fxFlexOffset="100px" fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
 
 
   <mat-card class="container" fxFlex="30">
@@ -50,4 +58,5 @@
       </form>
     </mat-card-content>
   </mat-card>
+</div>
 </div>

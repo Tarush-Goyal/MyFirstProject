@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReplaySubject } from 'rxjs/internal/ReplaySubject';
 
 
 @Component({
@@ -8,30 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-temp=[1,2,2,1,3,3,3]
-counter=[1,1,1,1,1,1,1]
-removedArrayIndex=[]
-newTemp=[]
-clickMe(){
-  this.newTemp=this.temp.filter((data,index,arr)=>
-  {
-if(arr.indexOf(data)!==index){
-  this.counter[data]++;
-}
+  clicked(){
+    const mySubject = new ReplaySubject(2);
 
-if(arr.indexOf(data)===index){
-  return data
-}
+mySubject.next(1);
+mySubject.next(2);
+mySubject.next(3);
+mySubject.next(4);
 
-}
+mySubject.subscribe(x => {
+  console.log('From 1st sub:', x);
+});
 
-);
-console.log('removed',this.counter)
-  console.log('without duplicates:',this.newTemp);
+mySubject.next(5);
 
+mySubject.subscribe(x => {
+  console.log('From 2nd sub:', x);
+});
 
-
-}
+  }
 
   ngOnInit(): void {
   }
