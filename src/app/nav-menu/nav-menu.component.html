@@ -1,49 +1,195 @@
-<!-- <mat-menu #appMenu="matMenu">
-  <ng-template matMenuContent let-name="name">
-    <button mat-menu-item>Settings</button>
-    <button mat-menu-item>Log off {{name}}</button>
-  </ng-template>
-</mat-menu>
-
-<button mat-icon-button [matMenuTriggerFor]="appMenu" [matMenuTriggerData]="{name: 'Sally'}">
-  <mat-icon>more_vert</mat-icon>
-</button>
-
-<button mat-icon-button [matMenuTriggerFor]="appMenu" [matMenuTriggerData]="{name: 'Bob'}">
-  <mat-icon>more_vert</mat-icon>
-</button> -->
-
 <div fxLayout="column" fxLayoutGap="100px">
-  <button [matMenuTriggerFor]="menu1" #trigger1="matMenuTrigger" (mouseenter)="enter(trigger1)" (mouseleave)="leave(trigger1)" mat-list-item >Groceries</button>
-  <button [matMenuTriggerFor]="menu2" #trigger2="matMenuTrigger" (mouseenter)="enter(trigger2)" (mouseleave)="leave(trigger2)" mat-list-item >Fashion</button>
+  <button [matMenuTriggerFor]="menu1" #trigger1="matMenuTrigger" (mouseenter)="enter(trigger1)" (mouseleave)="leave(trigger1)" mat-list-item>Groceries</button>
+  <button [matMenuTriggerFor]="menu2" #trigger2="matMenuTrigger" (mouseenter)="enter(trigger2)" (mouseleave)="leave(trigger2)" mat-list-item>Fashion</button>
   <button [matMenuTriggerFor]="menu3" #trigger3="matMenuTrigger" (mouseenter)="enter(trigger3)" (mouseleave)="leave(trigger3)" mat-list-item>Furniture</button>
   <button [matMenuTriggerFor]="menu4" #trigger4="matMenuTrigger" (mouseenter)="enter(trigger4)" (mouseleave)="leave(trigger4)" mat-list-item>Electronics</button>
 </div>
 
-<mat-menu #menu1="matMenu" [hasBackdrop]="false" >
-  <div (mouseenter)="enterMenu()"  (mouseleave)="leaveMenu(trigger1)" fxFlexFill>
-    <button class="hide" mat-button></button>
-    <button  mat-menu-item *ngFor="let grocery of Grocery">{{grocery}}</button>
-   </div>
-</mat-menu>
+<mat-menu #menu1="matMenu" [hasBackdrop]="false">
+  <div (mouseenter)="enterMenu()" (mouseleave)="leaveMenu(trigger1)" fxFlexFill>
 
-<mat-menu #menu2="matMenu" [hasBackdrop]="false" >
- <div (mouseenter)="enterMenu()"  (mouseleave)="leaveMenu(trigger2)" fxFlexFill>
-   <button class="hide" mat-button></button>
-   <button  mat-menu-item *ngFor="let fashion of Fashion">{{fashion}}</button>
+
+    <div fxLayout="row" fxLayoutGap="160px">
+
+      <div fxLayout="column" fxLayoutGap="30px">
+
+        <div *ngFor="let grocery of navMenuData.Grocery | slice:0:2">
+          <button mat-menu-item><u>{{grocery.item | uppercase}}</u></button>
+
+          <mat-list>
+            <mat-list-item *ngFor="let temp of grocery.list">
+               <mat-icon mat-list-icon>chevron_right</mat-icon>
+              <div mat-line mat-menu-item class="styling">
+                {{temp | titlecase}}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </div>
+      <div fxLayout="column" fxLayoutGap="30px">
+
+        <div *ngFor="let grocery of navMenuData.Grocery | slice:2:4">
+          <button mat-menu-item><u>{{grocery.item | uppercase}}</u></button>
+
+          <mat-list>
+            <mat-list-item *ngFor="let temp of grocery.list">
+               <mat-icon mat-list-icon>chevron_right</mat-icon>
+              <div mat-line mat-menu-item class="styling">
+                {{temp | titlecase}}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center start">
+        <img src='./assets/images/maggi1.jpeg'>
+      </div>
+
+    </div>
   </div>
 </mat-menu>
 
-<mat-menu #menu3="matMenu" [hasBackdrop]="false" >
-<div (mouseenter)="enterMenu()"  (mouseleave)="leaveMenu(trigger3)" fxFlexFill>
-  <button class="hide" mat-button></button>
-  <button  mat-menu-item *ngFor="let furniture of Furniture">{{furniture}}</button>
- </div>
+<mat-menu #menu2="matMenu" [hasBackdrop]="false">
+  <div (mouseenter)="enterMenu()" (mouseleave)="leaveMenu(trigger2)" fxFlexFill>
+
+
+    <div fxLayout="row" fxLayoutGap="160px">
+
+      <div fxLayout="column" fxLayoutGap="30px">
+
+        <div *ngFor="let fashion of navMenuData.Fashion | slice:0:2">
+          <button mat-menu-item><u>{{fashion.item | uppercase}}</u></button>
+
+          <mat-list>
+            <mat-list-item *ngFor="let temp of fashion.list">
+               <mat-icon mat-list-icon>chevron_right</mat-icon>
+              <div mat-line mat-menu-item class="styling">
+                {{temp | titlecase}}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </div>
+      <div fxLayout="column" fxLayoutGap="30px">
+
+        <div *ngFor="let fashion of navMenuData.Fashion | slice:2:4">
+          <button mat-menu-item><u>{{fashion.item | uppercase}}</u></button>
+
+          <mat-list>
+            <mat-list-item *ngFor="let temp of fashion.list">
+               <mat-icon mat-list-icon>chevron_right</mat-icon>
+              <div mat-line mat-menu-item class="styling">
+                {{temp | titlecase}}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center start">
+        <img src='./assets/images/FA1_1.jpg'>
+      </div>
+
+    </div>
+  </div>
 </mat-menu>
 
-<mat-menu #menu4="matMenu" [hasBackdrop]="false" >
-<div (mouseenter)="enterMenu()"  (mouseleave)="leaveMenu(trigger4)" fxFlexFill>
-  <button class="hide" mat-button></button>
-  <button  mat-menu-item *ngFor="let electronics of Electronics">{{electronics}}</button>
- </div>
+<mat-menu #menu3="matMenu" [hasBackdrop]="false">
+  <div (mouseenter)="enterMenu()" (mouseleave)="leaveMenu(trigger3)" fxFlexFill>
+
+
+    <div fxLayout="row" fxLayoutGap="160px">
+
+      <div fxLayout="column" fxLayoutGap="30px">
+
+        <div *ngFor="let furniture of navMenuData.Furniture | slice:0:2">
+          <button mat-menu-item><u>{{furniture.item | uppercase}}</u></button>
+
+          <mat-list>
+            <mat-list-item *ngFor="let temp of furniture.list">
+               <mat-icon mat-list-icon>chevron_right</mat-icon>
+              <div mat-line mat-menu-item class="styling">
+                {{temp | titlecase}}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </div>
+      <div fxLayout="column" fxLayoutGap="30px">
+
+        <div *ngFor="let furniture of navMenuData.Furniture | slice:2:4">
+          <button mat-menu-item><u>{{furniture.item | uppercase}}</u></button>
+
+          <mat-list>
+            <mat-list-item *ngFor="let temp of furniture.list">
+               <mat-icon mat-list-icon>chevron_right</mat-icon>
+              <div mat-line mat-menu-item class="styling">
+                {{temp | titlecase}}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center start">
+        <img src='./assets/images/sofa1.jpg'>
+      </div>
+
+    </div>
+  </div>
+</mat-menu>
+
+<mat-menu #menu4="matMenu" [hasBackdrop]="false">
+  <div (mouseenter)="enterMenu()" (mouseleave)="leaveMenu(trigger4)" fxFlexFill>
+    <!-- <button class="hide" mat-button></button> -->
+
+    <div fxLayout="row" fxLayoutGap="160px">
+
+      <div fxLayout="column" fxLayoutGap="30px">
+
+        <div *ngFor="let electronic of navMenuData.Electronics | slice:0:2">
+          <button mat-menu-item><u>{{electronic.item | uppercase}}</u></button>
+
+          <mat-list>
+            <mat-list-item *ngFor="let temp of electronic.list">
+               <mat-icon mat-list-icon>chevron_right</mat-icon>
+              <div mat-line mat-menu-item class="styling">
+                {{temp | titlecase}}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="30px">
+
+        <div *ngFor="let electronic of navMenuData.Electronics| slice:2:4">
+          <button mat-menu-item><u>{{electronic.item | uppercase}}</u></button>
+
+          <mat-list>
+            <mat-list-item *ngFor="let temp of electronic.list">
+               <mat-icon mat-list-icon>chevron_right</mat-icon>
+              <div mat-line mat-menu-item class="styling">
+                {{temp | titlecase}}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center start">
+        <img src='./assets/images/note9.jpg'>
+      </div>
+
+    </div>
+  </div>
 </mat-menu>

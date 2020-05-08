@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { NavMenuData } from '../nav-menu.data';
 
 @Component({
   selector: 'app-nav-menu',
@@ -8,15 +9,10 @@ import { MatMenuTrigger } from '@angular/material/menu';
 })
 export class NavMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public navMenuData:NavMenuData) { }
 
   ngOnInit(): void {
   }
-
-  Fashion=['men','women'];
-  Grocery=['fruit','vegetable'];
-  Furniture=['table','desk'];
-  Electronics=['Phones','TVs']
 
 entered=false;
 
@@ -31,12 +27,11 @@ leave(trigger:MatMenuTrigger){
   setTimeout (() => {
         if(this.entered===false)
         {trigger.closeMenu();}
-      }, 40);
+      }, 25);
 }
 
 enterMenu(){
   this.entered=true;
-  console.log(this.entered);
 }
 
 leaveMenu(trigger:MatMenuTrigger){

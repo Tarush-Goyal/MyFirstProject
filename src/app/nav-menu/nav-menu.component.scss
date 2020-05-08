@@ -2,7 +2,50 @@
   height:0px;
   width:0px;
 }
-//
+
+::ng-deep.cdk-overlay-pane{
+  position:static !important;
+}
+
+
+
+::ng-deep .mat-menu-panel {
+  margin-top: -30px;
+
+  max-width: none !important;
+  max-height: none !important;
+}
+
+::ng-deep .mat-menu-content{
+  height:600px !important;
+  width:800px !important;
+  z-index:1050;
+}
+
+::ng-deep .cdk-overlay-pane
+{
+  margin-left:200px;
+  margin-top: 50px;
+}
+
+::ng-deep .ng-trigger.ng-tns-c170-5{
+  margin-bottom:50px;
+}
+
+::ng-deep .ng-trigger.ng-tns-c170-1{
+  margin-bottom:50px;
+}
+
+img{
+  width:150px;
+  height:150px;
+}
+
+.styling{
+  padding-left:15px;
+  padding-right:10px;
+}
+
 //
 //
 //
@@ -11,39 +54,8 @@
 //     top:200px;
 // }
 // .cdk-overlay-connected-position-bounding-box{
-//     top:0 !important;
-//
-// }
-//
-//
-
-
-
-
-
-
-
-
-
-
-
-::ng-deep .mat-menu-panel {
-  margin-top: -30px;
-  // margin-left: 50px;
-  max-width: none !important;
-  max-height: none !important;
-}
-//
-::ng-deep .mat-menu-content{
-  height:550px !important;
-  width:500px !important;
-  z-index:1050;
-}
+//     top:50!important;
+// //
+//  }
 //
 //
-//
-// ::ng-deep .mat-drawer-backdrop,.cdk-overlay-panecdk-overlay-pane
-::ng-deep .cdk-overlay-pane
-{
-  margin-left:200px;
-}
