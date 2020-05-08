@@ -1,0 +1,18 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
+
+
+<div fxLayout="column"  fxLayoutGap="30px" *ngIf="currentUserDetails">
+
+<p>First Name: {{currentUserDetails.firstname}}</p>
+<p>Last Name: {{currentUserDetails.lastname}}</p>
+<p>Email:{{currentUserDetails.email}}</p>
+<p>Password: {{currentUserDetails.password}}</p>
+
+</div>
+
+<h1  *ngIf="!currentUserDetails">
+  Sign in First!
+</h1>
+
+
+</div>

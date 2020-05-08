@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
   visible='visibility'
   values='';
   focus=true;
-  errorMsg;
-  successMsg;
+  errorMsg=null;
+  successMsg=null;
 
   constructor(private router: Router,private http: HttpClient, private authService:AuthService,) { }
 
@@ -38,17 +38,21 @@ onSubmit(){
   let email=this.loginForm.get('email').value;
       let password=this.loginForm.get('password').value;
       this.authService.login(email,password).subscribe(
-        loginData=>{this.authService.id=loginData.idToken;
-          console.log(loginData.idToken)},
+        loginData=>{
+          this.authService.getEmail().next(loginData.email);
+
+        },
       error=>{
       this.errorMsg=error},
       ()=>{
         this.errorMsg='';
         this.successMsg="Logged in Successfully";
-    setTimeout(()=>{this.loginForm.reset(),1000})
+    // setTimeout(()=>{this.loginForm.reset(),1000})
   }
 )
-this.authService.loggedStatus.next(true);
+if(!this.errorMsg){
+  this.authService.loggedStatus.next(true);
+}
 }
 
 onFocus(){
@@ -70,6 +74,11 @@ showPassword(){
     this.Type='password';
     this.visible='visibility';
   }
+}
+
+ngOnDestroy(){
+  this.errorMsg='';
+  this.successMsg='';
 }
 
   }

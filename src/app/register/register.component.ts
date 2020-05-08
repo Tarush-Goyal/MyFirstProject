@@ -56,16 +56,24 @@ export class RegisterComponent implements OnInit {
     // this.signupForm.controls.password.markAsUntouched({ emitEvent: true });
   }
 
+  pushData(){
+    this.http.post('https://my-project-95bb8.firebaseio.com/form.json',{
+      firstname:this.signupForm.get("firstname").value,
+      lastname:this.signupForm.get("lastname").value,
+      email:this.signupForm.get("email").value,
+      password:this.signupForm.get("password").value
+    }).subscribe();
+  }
+
   onSubmit() {
     let email = this.signupForm.get("email").value;
     let password = this.signupForm.get("password").value;
     this.authService.signup(email, password).subscribe(
-      registerData => console.log(registerData),
-      error => {
-        
-        this.errorMsg = error;
-        // this.signupForm.reset({firstname:'',lastname:'',email:'',password:''});
+      registerData => {
+        console.log(registerData)
+        this.pushData();
       },
+      error => this.errorMsg = error,
       () => {
         this.errorMsg='';
         this.successMsg = "Registered Successfully";
@@ -73,8 +81,6 @@ export class RegisterComponent implements OnInit {
       }
     );
 
-
-    // this.http.post('https://my-project-95bb8.firebaseio.com/form.json',this.temp).subscribe(responseData=>console.log(responseData))
   }
 
   login() {
@@ -89,5 +95,10 @@ export class RegisterComponent implements OnInit {
       this.Type = "password";
       this.visible = "visibility";
     }
+  }
+
+  ngOnDestroy(){
+    this.errorMsg='';
+    this.successMsg='';
   }
 }
