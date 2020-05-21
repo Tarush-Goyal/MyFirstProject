@@ -15,6 +15,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
+import {TextFieldModule} from '@angular/cdk/text-field';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     MatMenuModule,
     MatCheckboxModule,
-        MatDividerModule,
+    MatDividerModule,
+    TextFieldModule,
 
   ],
 
@@ -52,7 +54,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     MatTableModule,
     MatCheckboxModule,
-        MatDividerModule,
+    MatDividerModule,
+    TextFieldModule,
 
 ]
 })
