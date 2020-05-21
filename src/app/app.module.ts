@@ -27,6 +27,7 @@ import { TestComponent } from './test/test.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { UserDetailsComponent } from './header/user-details/user-details.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 
@@ -49,6 +50,7 @@ import { UserDetailsComponent } from './header/user-details/user-details.compone
     TestComponent,
     AllProductsComponent,
     UserDetailsComponent,
+    CheckoutComponent,
 
 
   ],

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { IProductViewModel } from '../product.data';
 import { UpdateCart } from '../update-cart';
+import { Router } from '@angular/router';
 
 
 export interface NewModel{
@@ -13,6 +14,7 @@ export interface NewModel{
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./cart.component.scss']
 })
 
@@ -24,7 +26,7 @@ export class CartComponent implements OnInit {
   quantity;
     displayedColumns2=['no','image','title','quantity','price']
 
-  constructor(private updateCart: UpdateCart) { }
+  constructor(private updateCart: UpdateCart,  private route: Router) { }
 
   ngOnInit(): void {
     if(this.updateCart.value>0){
@@ -45,6 +47,10 @@ export class CartComponent implements OnInit {
       this.Element_data[i]=option;
 
     }
+  }
+
+  checkout(){
+    this.route.navigate(["/checkout"]);
   }
 
 }

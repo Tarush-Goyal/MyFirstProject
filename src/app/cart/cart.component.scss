@@ -1,17 +1,23 @@
-table {
-  width: 100%;
+app-cart {
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100px;
+    max-height: 100px;
+    transform: scale(1,1);
+  }
+
+  .mat-form-field-wrapper {
+    width: 30px !important;
+  }
 }
 
-img{
-  max-width: 100px;
-  max-height: 100px;
-  transform:scale(1,1);
+.margin{
+  margin-bottom: 50px;
+  margin-right: 50px;
 }
-
-::ng-deep .mat-form-field-wrapper{
-  width:30px !important;
-}
-
 // ::ng-deep .mat-form-field-underline{
 //   display: none !important;
 // }
