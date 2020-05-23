@@ -50,7 +50,7 @@ export class CartComponent implements OnInit {
   }
 
   checkout(){
-    this.route.navigate(["/checkout"]);
+    this.route.navigate(["/stepper"]);
   }
 
 }

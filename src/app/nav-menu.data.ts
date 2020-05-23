@@ -8,7 +8,7 @@ export interface navData{
 @Injectable({providedIn:'root'})
 
 export class NavMenuData{
-  
+
   Fashion=[
     {
       item:'men',
@@ -60,7 +60,7 @@ export class NavMenuData{
     },
 
     {
-      item:'TVs',
+      item:'Televisions',
       list:['Samsung','Sony','Xiaomi']
     },
 
@@ -70,7 +70,7 @@ export class NavMenuData{
     },
 
     {
-      item:'ACs',
+      item:'Air Conditioners',
       list:['General','Voltas','Daikin']
     }
   ]

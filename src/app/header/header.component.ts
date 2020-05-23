@@ -10,9 +10,6 @@ import { Subject } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   providers:[],
-  // host: {
-  //   "(document:click)": "onClick()"
-  // }
 })
 export class HeaderComponent implements OnInit {
 
@@ -34,6 +31,10 @@ onClick(){
 this.toggle();
 }
 
+loggedInStatus(){
+  return this.currentUser==='Guest';
+}
+
 logOut(){
   console.log('logout clicked');
   this.authService.signOut();
@@ -41,27 +42,27 @@ logOut(){
 
 
   ngOnInit(): void {
-      this.authService.loggedStatus.subscribe(value=>{this.loggedIn=value;
-      console.log(this.loggedIn);
-    });
+    //   this.authService.loggedStatus.subscribe(value=>{this.loggedIn=value;
+    //   console.log(this.loggedIn);
+    // });
 
 
     this.authService.getEmail().subscribe(email=>{
       this.currentUser=email;
     });
 
-      this.authService.user.subscribe(user=>this.currentUser=user);
+      // this.authService.user.subscribe(user=>this.currentUser=user);
   }
 
   ngOnChanges(){
-    this.authService.loggedStatus.subscribe(value=>{this.loggedIn=value;
-    console.log(this.loggedIn)});
+    // this.authService.loggedStatus.subscribe(value=>{this.loggedIn=value;
+    // console.log(this.loggedIn)});
 
     this.authService.getEmail().subscribe(email=>{
       this.currentUser=email;
     });
 
-    this.authService.user.subscribe(user=>this.currentUser=user);
+    // this.authService.user.subscribe(user=>this.currentUser=user);
   }
 
 

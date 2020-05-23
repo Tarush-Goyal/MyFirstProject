@@ -16,6 +16,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 import {TextFieldModule} from '@angular/cdk/text-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import {TextFieldModule} from '@angular/cdk/text-field';
     MatCheckboxModule,
     MatDividerModule,
     TextFieldModule,
+    MatSelectModule,
+    MatStepperModule,
 
   ],
 
@@ -56,6 +60,8 @@ import {TextFieldModule} from '@angular/cdk/text-field';
     MatCheckboxModule,
     MatDividerModule,
     TextFieldModule,
+    MatSelectModule,
+    MatStepperModule
 
 ]
 })

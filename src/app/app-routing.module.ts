@@ -9,6 +9,7 @@ import { AllProductsComponent } from './all-products/all-products.component';
 import { HomeComponent } from './home/home.component';
 import { UserDetailsComponent } from './header/user-details/user-details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'all-products',component:AllProductsComponent},
   {path: 'userDetails',component:UserDetailsComponent},
   {path: 'checkout',component:CheckoutComponent},
+  {path: 'stepper',component:StepperComponent},
   {path: '**',redirectTo:'home',pathMatch:'full'}
 ];
 

@@ -9,11 +9,11 @@
       <img src="../assets/images/angular_home.png" style="height:50px;width:50px">
     </a>
 
-    <a mat-button *ngIf="!loggedIn" [routerLink]="['/register']"> Create Account </a>
-    <a mat-button *ngIf="!loggedIn" [routerLink]="['/login']"> Login </a>
+    <a mat-button *ngIf="loggedInStatus()" [routerLink]="['/register']"> Create Account </a>
+    <a mat-button *ngIf="loggedInStatus()" [routerLink]="['/login']"> Login </a>
     <a mat-button [routerLink]="['/product-page','GR1']"> Products </a>
     <a mat-button [routerLink]="['all-products']"> All Products </a>
-    <a mat-button *ngIf="loggedIn" (click)="logOut()">Log Out</a>
+    <a mat-button *ngIf="!loggedInStatus()" (click)="logOut()">Log Out</a>
 
     </div>
     <div fxFlex="700px">

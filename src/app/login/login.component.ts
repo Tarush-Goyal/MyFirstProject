@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   errorMsg=null;
   successMsg=null;
 
-  constructor(private router: Router,private http: HttpClient, private authService:AuthService,) { }
+  constructor(private router: Router,private http: HttpClient, private authService:AuthService) { }
 
   ngOnInit() {
     this.loginForm=new FormGroup({
@@ -50,9 +50,9 @@ onSubmit(){
     // setTimeout(()=>{this.loginForm.reset(),1000})
   }
 )
-if(!this.errorMsg){
-  this.authService.loggedStatus.next(true);
-}
+// if(!this.errorMsg){
+//   this.authService.loggedStatus.next(true);
+// }
 }
 
 onFocus(){
