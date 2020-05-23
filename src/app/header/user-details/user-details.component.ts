@@ -12,6 +12,7 @@ export class UserDetailsComponent implements OnInit {
   error=null;
   userEmail=null;
   currentUserDetails: UserDetails;
+  visible='visibility';
 
   constructor(private authService:AuthService) { }
 
@@ -26,7 +27,8 @@ export class UserDetailsComponent implements OnInit {
 
         this.error = error.message;
         console.log(error);
-      }
+      },
+
     );
 
   }
@@ -38,6 +40,22 @@ export class UserDetailsComponent implements OnInit {
         return;
       }
     }
+  }
+
+  password(n:number){
+    return Array(n);
+  }
+
+  changeVisibility(){
+    if(this.visible==='visibility'){
+      this.visible='visibility_off';
+    }
+    else
+    this.visible='visibility';
+  }
+
+  getVisibility(){
+    return this.visible==='visibility';
   }
 
   ngOnInit(): void {

@@ -28,6 +28,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { UserDetailsComponent } from './header/user-details/user-details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 
 
@@ -51,6 +52,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     AllProductsComponent,
     UserDetailsComponent,
     CheckoutComponent,
+    StepperComponent,
 
 
   ],

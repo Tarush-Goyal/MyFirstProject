@@ -27,8 +27,9 @@ export interface UserDetails {
 })
 export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
-loggedStatus: Subject<boolean> = new Subject<boolean>();
-private email:ReplaySubject<string>=new ReplaySubject<string>(1); //for matching email in userdetails
+
+// loggedStatus: Subject<boolean> = new Subject<boolean>();
+private email:ReplaySubject<string>=new ReplaySubject<string>(1); //for matching email in userdetails and displaying on header
 user: Subject<string>=new Subject<string>();
 
   signup(email: string, password: string) {
@@ -83,9 +84,9 @@ user: Subject<string>=new Subject<string>();
   }
 
   signOut(){
-this.loggedStatus.next(false);
-this.email.next(null);
-this.user.next('Guest');
+// this.loggedStatus.next(false);
+this.email.next('Guest');
+// this.user.next('Guest');
   }
 
   fetchData(){
