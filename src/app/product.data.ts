@@ -8,6 +8,7 @@ export interface IProductViewModel {
   images: IImageMapViewModel[];
   price: number;
   discount: number;
+  discountedPrice: number;
   details: string[];
 
 }
@@ -43,6 +44,7 @@ Product:IProductViewModel[]=[
         ],
         price:67999,
         discount:50,
+        discountedPrice:33999,
         details:[
           'Camera: 12 MP + Dual Rear Camera (F1.5/F2.4) + 12 MP (F2.4)',
           ' MP (F1.7) front camera',
@@ -66,6 +68,7 @@ Product:IProductViewModel[]=[
         ],
         price:20,
         discount:10,
+        discountedPrice:18,
         details:[
           'This is a Vegetarian product',
           ' Goodness of calcium and protein',
@@ -94,6 +97,7 @@ Product:IProductViewModel[]=[
         ],
         price:9999,
         discount:40,
+        discountedPrice:5999,
         details:[
           'Dimensions: H 34 x W 75 x D 32.5',
           ' Frame Material : Pine wood & Commercial Grade Ply Wood',
@@ -122,6 +126,7 @@ Product:IProductViewModel[]=[
         ],
         price:499,
         discount:20,
+        discountedPrice:399,
         details:[
           'Round-necked T-shirts in soft jersey.',
           ' 100% Original Products',
@@ -150,6 +155,7 @@ Product:IProductViewModel[]=[
         ],
         price:19999,
         discount:30,
+        discountedPrice:13999,
         details:[
           'Operating System: Android (Chromecast in-built)',
           ' 1Resolution: Full HD 1920 x 1080 Pixels',
@@ -178,6 +184,7 @@ Product:IProductViewModel[]=[
         ],
         price:599,
         discount:20,
+        discountedPrice:479,
         details:[
           'Black solid T-shirt, has a round neck, and long sleeves',
           ' 100% Original Products',

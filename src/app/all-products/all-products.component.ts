@@ -30,25 +30,19 @@ export class AllProductsComponent implements OnInit {
 
   newProducts = [];
   temp = false;
-  newPrice = [];
-
-  discountedPrice: number[] = [];
+  // newPrice = [];
   constructor(public productData: ProductData, private route: Router) {}
 
   ngOnInit(): void {
     this.product = this.productData.Product;
-    this.findPrice();
   }
 
   slided(slider) {
     this.temp=true;
     console.log(slider.value);
-    for(let i in this.discountedPrice)  {
-    if(this.discountedPrice[i]<=slider.value){
+    for(let i in this.product)  {
+    if(this.product[i].discountedPrice<=slider.value){
       this.newProducts.push(this.product[i]);
-      this.newPrice.push(this.discountedPrice[i]);
-      console.log(this.discountedPrice[i])
-
       }
     }
   }
@@ -59,7 +53,7 @@ export class AllProductsComponent implements OnInit {
       for (let j in this.product) {
         if (this.product[j].id.slice(0, 2) == this.categories[i].id) {
           this.newProducts.push(this.product[j]);
-          this.newPrice.push(this.discountedPrice[j]);
+          // this.newPrice.push(this.product[j].discountedPrice);
         }
       }
     }
@@ -68,8 +62,8 @@ export class AllProductsComponent implements OnInit {
         if (this.newProducts[x].id.slice(0, 2) == this.categories[i].id) {
           this.newProducts = this.remove(this.newProducts, x);
           this.newProducts.pop();
-          this.newPrice = this.remove(this.newPrice, x);
-          this.newPrice.pop();
+          // this.newPrice = this.remove(this.newPrice, x);
+          // this.newPrice.pop();
           x = 0;
         }
       }
@@ -98,13 +92,5 @@ export class AllProductsComponent implements OnInit {
 
   navigateToProduct2(i: string) {
     this.route.navigate(["/product-page/", i]);
-  }
-
-  findPrice() {
-    for (let i in this.product) {
-      this.discountedPrice[i] =
-        this.product[i].price -
-        ~~((this.product[i].price * this.product[i].discount) / 100);
-    }
   }
 }

@@ -1,17 +1,15 @@
-<mat-horizontal-stepper linear #stepper >
+<mat-horizontal-stepper linear #stepper>
   <mat-step [stepControl]="firstFormGroup" label="Address">
     <app-checkout>
       <button mat-raised-button color="accent" matStepperNext type="submit">Go to Payment</button>
     </app-checkout>
 
   </mat-step>
-  <mat-step  label="Payment" >
-  <h1>Payment</h1>
-  <!-- <button mat-raised-button matStepperPrevious >Back</button> -->
-  <!-- <button mat-raised-button matStepperNext type="submit">Next</button> -->
-      <!-- <button mat-raised-button color="accent" matStepperNext type="submit">Go to Payment</button> -->
-      <button type="button" mat-button matStepperPrevious>Back</button>
-<button type="submit" mat-button matStepperNext>Next</button>
+  <mat-step label="Payment">
+    <h1>Payment</h1>
+
+    <button type="button" mat-button matStepperPrevious>Back</button>
+    <button type="submit" mat-button matStepperNext>Next</button>
   </mat-step>
   <mat-step label="Done">
     <h1>You are now done</h1>

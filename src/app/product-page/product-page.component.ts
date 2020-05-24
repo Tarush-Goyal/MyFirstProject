@@ -13,7 +13,6 @@ import { ActivatedRoute, Params } from "@angular/router";
 export class ProductPageComponent implements OnInit {
   productID: string;
   product: IProductViewModel;
-  discountedPrice;
   constructor(
     private updateCart: UpdateCart,
     public gallery: Gallery,
@@ -27,15 +26,13 @@ export class ProductPageComponent implements OnInit {
       console.log("this.productID", this.productID);
     });
     this.findProduct();
-
-    this.discountedPrice=this.product.price-~~(this.product.price*this.product.discount/100);
     this.gallery.ref().load(this.items);
   }
 
   images: GalleryItem[];
 
   findProduct() {
-    // console.log("this.productID", this.productI);
+
     this.product = this.productData.Product.find(
       (element:IProductViewModel) => element.id === this.productID
     );
@@ -57,6 +54,5 @@ export class ProductPageComponent implements OnInit {
   add() {
     this.updateCart.changeCart.next(++this.updateCart.value);
     this.updateCart.cartProduct.push(Object.assign({},this.product));
-    // this.updateCart.cartProduct.push(this.product);
   }
 }
