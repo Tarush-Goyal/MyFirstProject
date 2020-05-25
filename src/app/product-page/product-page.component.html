@@ -1,21 +1,14 @@
-  <!-- <mat-card fxLayout="column" > -->
+
   <div class="mdc-layout-grid">
   <div fxLayout="column" fxLayoutGap="150px">
 
-
-<!-- <mat-card-header> -->
-    <!-- <mat-card-title fxFlexFill class="title" fxLayoutAlign="center center"><u>{{product.title}}</u></mat-card-title> -->
-    <div class="title" fxLayoutAlign="center center"><u>{{product.title}}</u>
+    <div  class="title" fxLayoutAlign="center center"><u>{{product.title}}</u>
     </div>
-  <!-- </mat-card-header> -->
-<!-- <div fxFlexOffset="100px"> -->
 
-
-    <!-- <mat-card-content fxLayout="row" fxLayoutGap="100px"> -->
 <div fxLayout="row" fxLayoutGap="80px" >
 
 
-      <div fxLayout="column" fxLayoutGap="0px">
+      <div fxLayout="column" fxLayoutGap="0px" class="ImageRipple">
 
         <div [ngSwitch]=index fxFlexAlign="center">
           <button mat-icon-button>
@@ -25,10 +18,8 @@
           </button>
         </div>
 
-        <!-- <div fxFlex="100px"></div> -->
-
         <div fxLayout="row" fxLayoutGap="75px" style="position:relative;top:100px">
-          <button mat-icon-button *ngFor="let image of product.images;let i=index" (click)="buttonClicked(i)">
+          <button mat-icon-button *ngFor="let image of product.images;let i=index" (click)="buttonClicked(i)" matRippleDisabled=true>
             <img  [src]=image.srcUrl class="small_size" [ngClass]="{ImgBorder:index===i}">
           </button>
         </div>
@@ -73,10 +64,6 @@
         </mat-list>
       </div>
 </div>
-    <!-- </mat-card-content> -->
-    <!-- </div> -->
-    <!-- <mat-card-actions></mat-card-actions> -->
 
-  <!-- </mat-card> -->
   </div>
 </div>

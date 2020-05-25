@@ -1,20 +1,21 @@
 @import "@material/layout-grid/mdc-layout-grid";
 
+.mat-ripple-element {
+  transition-duration: 0ms !important;
+}
+.ImageRipple{
+  ::ng-deep .mat-ripple,.mat-button-ripple,.mat-button-ripple-round { display: none; }
+  ::ng-deep .mat-button-focus-overlay { background-color: transparent!important; }
+}
+// .cdk-program-focused{ opacity: 0 !important; }
+
 .size{
-  // height:200px;
-  // width:100px;
-
-
     transform: scale(1,1);
   max-height:200px;
   max-width:200px;
 }
 
 .small_size{
-  // height:100px;
-  // width:50px;
-
-
   transform: scale(1,1);
   max-height: 100px;
   max-width: 100px;

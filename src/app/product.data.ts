@@ -26,7 +26,7 @@ export class ProductData {
 Product:IProductViewModel[]=[
   {
         id:'EL1',
-        title:'Samsung Galaxy Note 9',
+        title:'Smartphone',
         images:[
           {
            srcUrl: './assets/images/note9.jpg',

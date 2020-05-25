@@ -3,14 +3,18 @@
 <div class="mdc-layout-grid">
   <div fxLayout="column" fxLayoutGap="50px">
 
-    <h1>New Collections</h1>
+<div>
+    <u><h1>New Collections</h1></u>
     <div fxLayout="row"  fxLayoutAlign="space-around center" style="background-color:papayawhip">
-    <img [src]=image *ngFor="let image of Images" style="height:100px;width:100px" >
+    <img [src]=product.image (click)="navigateToProduct(i)" *ngFor="let product of products;let i=index" style="height:100px;width:100px;cursor:pointer" >
   </div>
+</div>
 
-  <h1>Shop by Category</h1>
+<div>
+  <u><h1>Shop by Category</h1></u>
   <div fxLayout="row" fxLayoutAlign="space-around center" style="background-color:papayawhip">
-  <img [src]=image *ngFor="let image of Images" style="height:100px;width:100px" >
+      <img [src]=product.image (click)="navigateToProduct(i)" *ngFor="let product of products;let i=index" style="height:100px;width:100px;cursor:pointer" >
+</div>
 </div>
 
   </div>
