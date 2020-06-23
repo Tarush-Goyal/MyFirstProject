@@ -19,7 +19,6 @@ export class RegisterComponent implements OnInit {
   focus = true;
   errorMsg;
   successMsg;
-  // temp={id:1};
 
   constructor(
     private router: Router,
@@ -31,9 +30,7 @@ export class RegisterComponent implements OnInit {
     this.signupForm = new FormGroup({
       firstname: new FormControl("", [Validators.required]),
       lastname: new FormControl("", [Validators.required]),
-      // 'email':new FormControl('',{validators:[Validators.required,Validators.email],updateOn: 'blur'}),
       email: new FormControl("", [Validators.required, Validators.email]),
-      // 'password':new FormControl('',{validators:[Validators.required,Validators.minLength(6)],updateOn:'blur'}),
       password: new FormControl("", [
         Validators.required,
         Validators.minLength(6)

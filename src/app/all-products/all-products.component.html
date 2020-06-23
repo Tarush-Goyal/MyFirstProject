@@ -3,19 +3,13 @@
 </div>
 <div fxLayout="row" fxFlexFill>
 
-  <div fxLayout="column" fxLayoutAlign="space-evenly center" fxFlex="300px">
+  <div fxLayout="column" fxLayoutAlign="start center" fxFlex="300px">
 
-    <u><h1>Filters</h1></u>
-    <div fxLayout="column" fxLayoutGap="20px">
-    <h1>Categories</h1>
-      <mat-checkbox #id=matCheckbox  *ngFor="let cat of categories; let i=index" (click)="categoryClicked(id,i)">{{cat.category}}</mat-checkbox>
-    </div>
-
-    <div>
-
-    <h1>Price Range</h1>
+    <p>Filters</p>
+    <p>Categories</p>
+    <mat-checkbox #id=matCheckbox *ngFor="let cat of categories; let i=index" (click)="categoryClicked(id,i)">{{cat.category}}</mat-checkbox>
+    <p>Price Range</p>
     <mat-slider #slider=matSlider (click)=slided(slider) min="0" step="1000" max="100000" thumbLabel></mat-slider>
-  </div>
   </div>
 
   <mat-divider vertical=true></mat-divider>
@@ -24,7 +18,7 @@
   <div fxFlexOffset="50px">
     <div fxLayout="column" class="Margin">
 
-      <div>
+      <div *ngIf="temp">
         <div fxLayout="column">
 
           <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center end">
@@ -61,7 +55,7 @@
           </div>
         </div>
       </div>
-      <!-- <div *ngIf="!filter">
+      <div *ngIf="!temp">
 
         <div fxLayout="column">
 
@@ -88,7 +82,7 @@
               <div fxLayout="column" fxLayoutAlign="center center">
 
                 <a mat-icon-button (click)="navigateToProduct(3*i+1)" style="width:100%">
-             {{product[3*i+1].title}}
+                  {{product[3*i+1].title}}
                 </a>
                 <a mat-icon-button (click)="navigateToProduct(3*i)" style="width:100%">
                   Price:₹{{product[3*i+1].discountedPrice}}
@@ -115,7 +109,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>
